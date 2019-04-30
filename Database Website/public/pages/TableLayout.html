@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD4m8CeTbpU_QFIEzsiGt5wDZdFv3SIQUQ",
+    authDomain: "ez-serve-5af8c.firebaseapp.com",
+    databaseURL: "https://ez-serve-5af8c.firebaseio.com",
+    projectId: "ez-serve-5af8c",
+    storageBucket: "ez-serve-5af8c.appspot.com",
+    messagingSenderId: "972787479924"
+  };
+  firebase.initializeApp(config);
+</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>EZ Serve | Table Layout</title>
+  <link href="TableLayout.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+  <header class="main-header">
+    <div class="bar">
+      <img src="Images/Logo.jpg" alt="logo" class="logo">
+      <p class="AppName">CS 4354 | Course Project</p>
+      <nav class="nav main-nav">
+          <ul>
+            <li><a href="HomeScreen.html">HOME</a></li>
+            <li><a href="CustomerBill.html">STATISTICS</a></li>
+            <li><a href="TableLayout.html">INDEX</a></li>
+          </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div id="outerContainer">
+    <div id="container">
+      <div id="item">
+
+      </div>
+    </div>
+  </div>
+
+  <button onclick="createSquare()" class="button">Add Table</button>
+  <button onclick="setAssistance()" class="button">Dismiss request for assistance</button>
+  <!-- <input type="text" id="itemText"> -->
+  <!-- <button onclick="addItems()" class="button">Add Item</button> -->
+
+	<!-- <table id="tableOrder" style="width: 20%">
+		<caption>Items on order</caption>
+	</table> -->
+
+  <script>
+    var container = document.querySelector("#container");
+    var activeItem = null;
+
+	//get the table
+	var tableOrder = document.getElementById('tableOrder');
+
+	//get list of items by key name
+	var query = firebase.database().ref("table1").orderByKey();
+
+	//get the object from database
+	var table1Ref = firebase.database().ref().child('table1');
+
+	//set key for when we want to push a new item into DB
+	//addItems function does the push
+	var table1Key = table1Ref;
+
+	var itemCount = 0;
+
+	//initially, the item on canvas is not active
+    var active = false;
+
+	//event listeners for mouse and touch events.
+    container.addEventListener("touchstart", dragStart, false);
+    container.addEventListener("touchend", dragEnd, false);
+    container.addEventListener("touchmove", drag, false);
+
+    container.addEventListener("mousedown", dragStart, false);
+    container.addEventListener("mouseup", dragEnd, false);
+    container.addEventListener("mousemove", drag, false);
+
+	//when the item is touched or clicked on
+    function dragStart(e) {
+		//if the item is not part of the canvas
+      if (e.target !== e.currentTarget) {
+        active = true;
+
+        // this is the item we are interacting with
+        activeItem = e.target;
+
+		activeItem.style.borderColor = "black";
+
+		//keep copies of table from appearing multiple times
+		while (document.getElementById('tableOrder').hasChildNodes()){
+			tableOrder.removeChild(tableOrder.firstChild);
+		}
+
+		//loop through items in database and populate table with items
+		query.once("value").then(function(snapshot){
+			snapshot.forEach(function(childSnapshot){
+				var row = tableOrder.insertRow(-1);
+				var cell1 = row.insertCell(0);
+				var deleteButton = document.createElement("BUTTON");
+				deleteButton.onclick = function() {removeItem(this)};
+				deleteButton.innerHTML = "Delete";
+				var cell2 = row.insertCell(1).appendChild(deleteButton);
+
+				var childData = childSnapshot.val();
+
+				table1Key.on('value', snapshot => cell1.innerHTML = childData);
+			});
+		});
+
+        if (activeItem !== null) {
+          if (!activeItem.xOffset) {
+            activeItem.xOffset = 0;
+          }
+
+          if (!activeItem.yOffset) {
+            activeItem.yOffset = 0;
+          }
+
+          if (e.type === "touchstart") {
+            activeItem.initialX = e.touches[0].clientX - activeItem.xOffset;
+            activeItem.initialY = e.touches[0].clientY - activeItem.yOffset;
+          } else {
+            console.log("doing something!");
+            activeItem.initialX = e.clientX - activeItem.xOffset;
+            activeItem.initialY = e.clientY - activeItem.yOffset;
+          }
+        }
+      }
+    }
+
+	//when the item is let go
+    function dragEnd(e) {
+      if (activeItem !== null) {
+        activeItem.initialX = activeItem.currentX;
+        activeItem.initialY = activeItem.currentY;
+      }
+
+	  activeItem.style.borderColor = "rgba(225,225,225,1.0)";
+
+      active = false;
+      activeItem = null;
+    }
+
+	//when the item is being dragged
+    function drag(e) {
+      if (active) {
+        if (e.type === "touchmove") {
+          e.preventDefault();
+
+          activeItem.currentX = e.touches[0].clientX - activeItem.initialX;
+          activeItem.currentY = e.touches[0].clientY - activeItem.initialY;
+        } else {
+          activeItem.currentX = e.clientX - activeItem.initialX;
+          activeItem.currentY = e.clientY - activeItem.initialY;
+        }
+
+        activeItem.xOffset = activeItem.currentX;
+        activeItem.yOffset = activeItem.currentY;
+
+        setTranslate(activeItem.currentX, activeItem.currentY, activeItem);
+      }
+    }
+
+	//moving the item
+    function setTranslate(xPos, yPos, el) {
+      el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
+    }
+
+	//add squares to the canvas
+	function createSquare(){
+		var elmt = document.getElementsByTagName("div");
+		var cln = elmt[2].cloneNode(true);
+		document.getElementById("container").appendChild(cln);
+	}
+
+	//add items from text input, add to DB, display them
+	function addItems(){
+		//generate key
+		table1Key = table1Ref.push();
+		//set key to user input
+		table1Key.set(document.getElementById("itemText").value);
+		//notify user item was added
+		alert("Item added!");
+	}
+
+	//remove items from order list
+	function removeItem(r){
+		//iterate through the list of items in database and get a copy of each
+		query.once("value").then(function(snapshot){
+			snapshot.forEach(function(childSnapshot){
+				//get the value of the copy
+				var childData = childSnapshot.val();
+				//path to copy
+				var key = childSnapshot.key;
+				//get currently selected row
+				var i = r.parentNode.parentNode.rowIndex;
+				//get the cells of the row
+				var x = tableOrder.rows[i].cells;
+				//compare first cell of row's contents to database content
+				if (x[0].innerHTML == childData){
+					//remove item from web app
+					document.getElementById('tableOrder').deleteRow(i);
+					//remove item from database
+					table1Key.child(key).remove();
+				}
+			});
+		});
+	}
+
+	//TODO: set assitance state
+	function setAssistance(){
+
+	}
+
+  </script>
+
+
+
+</body>
+
+</html>
