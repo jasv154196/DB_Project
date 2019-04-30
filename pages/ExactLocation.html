@@ -40,39 +40,7 @@
         </header>
 
         <section class="container content-section">
-            <h2 class="section-header">Terrorist attacks per country</h2>
-            <div class="map-container">
-              <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-              <script type="text/javascript">
-                google.charts.load('current', {
-                  'packages':['geochart'],
-                  // Note: you will need to get a mapsApiKey for your project.
-                  // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
-                  'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
-                });
-                google.charts.setOnLoadCallback(drawRegionsMap);
-
-                function drawRegionsMap() {
-                  var data = google.visualization.arrayToDataTable([
-                    ['Country', 'Attacks'],
-                    ['Germany', 200],
-                    ['United States', 300],
-                    ['Brazil', 400],
-                    ['Canada', 500],
-                    ['France', 600],
-                    ['Russia', 700]
-                  ]);
-
-                  var options = {};
-
-                  var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
-
-                  chart.draw(data, options);
-                }
-              </script>
-
-              <div id="regions_div" style="width: 900px; height: 500px;"></div>
-            </div>
+            <iframe src="https://www.google.com/maps/d/embed?mid=1ClJ5zLKQcqjGaOFlrXuXic2DvZ10UPrR" width="1300" height="650"></iframe>
         </section>
     </body>
 </html>
