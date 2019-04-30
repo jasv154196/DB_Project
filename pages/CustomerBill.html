@@ -9,17 +9,12 @@
 
         <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
         <script>
-          // Initialize Firebase
-          var config = {
-            apiKey: "AIzaSyDvPl-Fj7Pf7iQYEO7yzQtO7HFPyVG9YYw",
-            authDomain: "ez-serve-81804.firebaseapp.com",
-            databaseURL: "https://ez-serve-81804.firebaseio.com",
-            projectId: "ez-serve-81804",
-            storageBucket: "ez-serve-81804.appspot.com",
-            messagingSenderId: "554660451499"
-          };
-          firebase.initializeApp(config);
-        </script>
+        // <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        // <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        // <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     </head>
     <body>
@@ -45,54 +40,47 @@
 
         <div class="map-container" id="interestingFacts">
           <div id="funfacts-page"><section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-    <div class="mdl-card mdl-cell mdl-cell--12-col">
+    <div class="mdl-card mdl-cell mdl-cell--6-col">
         <div class="mdl-card__supporting-text">
-            <h4>Query of attack fatalities</h4>
-            <ul class="mdl-list">
-                <li class="mdl-list__item">Bombing attacks: 34230</li>
-            </ul>
+            <h4>Most popular type of attacks</h4>
             <img src="images/MostPopularType.png">
+            <img src="images/MostPopularTypeAttacks.png">
         </div>
     </div>
 </section>
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
     <div class="mdl-card mdl-cell mdl-cell--12-col">
         <div class="mdl-card__supporting-text">
-            <h4>Armed Attacks Result</h4>
-            <ul class="mdl-list">
-                <li class="mdl-list__item">103062</li>
-            </ul>
-            <img src="images/MostPopularTypeArmedResult.png">
+            <h4>Most Lethal Type of Attacks</h4>
+            <img src="images/AttackFatalities.png">
+            <img src="images/MostLethalAttacks.png">
         </div>
     </div>
 </section>
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
     <div class="mdl-card mdl-cell mdl-cell--12-col">
         <div class="mdl-card__supporting-text">
-            <h4>Top 10 Countries</h4>
-            <ul class="mdl-list">
-                <li class="mdl-list__item">Columbia</li>
-            </ul>
+            <h4>Countries with most terrorist attacks</h4>
+            <img src="images/Top10Countries.png">
+            <p> </p>
             <img src="images/Top10CountriesResult.png">
         </div>
     </div>
 </section>
-<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-    <div class="mdl-card mdl-cell mdl-cell--12-col">
-        <div class="mdl-card__supporting-text">
-            <h4>Top 10 Terrorist Groups</h4>
-            <ul class="mdl-list">
-                <li class="mdl-list__item">Shining Path</li>
-            </ul>
-            <img src="images/Top10TerroristGroupsResult.png">
-        </div>
-    </div>
-</section>
+        <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+                <div class="mdl-card__supporting-text">
+                    <h4>Top 10 Terrorist Groups</h4>
+                    <ul class="mdl-list">
+                        <li class="mdl-list__item">Shining Path</li>
+                    </ul>
+                    <img src="images/Top10TerroristGroupsResult.png">
+                </div>
+            </div>
+        </section>
 
 
-</div>
-
-
+          </div>
         </div>
 
     </section>
