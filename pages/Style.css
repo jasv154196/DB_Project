@@ -1,127 +1,170 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
-@import url("https://fonts.googleapis.com/css?family=Metal+Mania");
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
 
 @font-face {
-    font-family: "Booter - Zero Zero";
-    src: url("Fonts/Booter - Zero Zero.woff") format("woff"),
-         url("Fonts/Booter - Zero Zero.woff2") format("woff2");
+    font-family: "Work Sans", sans-serif;
     font-weight: normal;
     font-style: normal;
 }
 
 * {
     box-sizing: border-box;
-    font-family: Raleway;
-    color: #777;
+    font-family: "Work Sans", sans-serif;
+    color: #000000;
 }
 
 html, body {
     margin: 0;
+    background-color: #222;
     padding: 0;
     min-height: 100%;
 }
 
-.nav ul {
-    margin: 0;
-}
 
-.nav li {
-    display: inline;
-}
 
-.nav a {
-    display: inline-block;
-    padding: .5em;
-    color: white;
-    text-decoration: none;
-}
-
-.main-nav {
-    text-align: center;
-    font-size: 1.1em;
-    font-weight: lighter;
-    border-bottom: 1px solid rgba(255, 255, 255, .3)
-}
-
-.main-nav li {
-    padding: 0 5%;
-}
-
-.nav a:hover {
-    background-color: rgba(255, 255, 255, .3)
-}
-
-.main-header {
-    background-color: rgba(0, 0, 0, .6);
-    background-image: url("Images/Header Background.jpg");
+header {
+    background-color: #55D6AA;
     background-blend-mode: multiply;
     background-size: cover;
-    padding-bottom: 30px;
+    padding-bottom: 0px;
 }
 
-.band-name {
-    text-align: center;
-    margin: 0;
-    font-size: 4em;
-    font-family: "Booter - Zero Zero";
-    font-weight: normal;
-    color: white;
+header::after{
+  content: '';
+  display: table;
+  clear: both;
 }
 
-.band-name-large {
-    font-size: 5em;
+.logo {
+  float: left;
+  padding: 3px 0;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  border-radius: 20%;
+  background-color: white;
+  max-height: 60px;
+  max-width: 60px;
 }
+
+.AppName {
+  color: #444;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 1000;
+  font-family: "Work Sans", sans-serif;
+  font-size: 20px;
+  display: inline-block;
+  margin-left: 15px;
+  padding-top: 1px;
+  position: relative;
+}
+
+nav{
+  float: right;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 23px;
+
+  position: relative;
+}
+
+nav a {
+  color: #444;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+nav a:hover {
+  color: #000;
+}
+
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #444;
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+
+
 
 .content-section {
     margin: 1em;
 }
 
+.bar {
+  width: 80%;
+  margin: 0 auto;
+}
+
+
 .container {
-    max-width: 900px;
+    max-width: 1500px;
     margin: 0 auto;
     padding: 0 1.5em;
+    background-color: white;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.map-container {
+    display: block;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    display: inline-block;
+    margin-bottom: 40px;
+}
+
+.container-chartone {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 1.5em;
+    background-color: white;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.content-section-chartone {
+    margin: 1em;
+    height: 600px;
+    width: 600px
+}
+
+.chart-container {
+    display: block;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    display: inline-block;
+    margin-bottom: 40px;
 }
 
 .section-header {
-    font-family: "Metal Mania";
+    font-family: "Work Sans", sans-serif;
     font-weight: normal;
-    color: #333;
+    color: #000000;
     text-align: center;
     font-size: 2.5em;
 }
 
-.about-band-image {
-    float: left;
-    height: 200px;
-    width: 200px;
-    margin: 15px;
-    border-radius: 50%;
-}
 
-.main-footer {
-    background-color: #56CCF2;
-    color: white;
-    padding: .25em 0;
-}
-
-.main-footer-container {
-    display: flex;
-    align-items: center;
-}
-
-.main-footer-container ul {
-    flex-grow: 1;
-    text-align: end;
-}
-
-.footer-nav li {
-    padding: 0 .5em;
-}
-
-.footer-nav img {
-    width: 30px;
-    height: 30px;
-}
 
 .btn {
     text-align: center;
@@ -170,39 +213,6 @@ html, body {
     background-color: #2D9CDB;
 }
 
-.tour-row {
-    border-bottom: 1px solid black;
-    padding-bottom: 1em;
-    margin-bottom: 1em;
-}
-
-.tour-row:last-child {
-    border: none;
-}
-
-.tour-item {
-    display: inline-block;
-    padding-right: .5em;
-}
-
-.tour-date {
-    color: #555;
-    width: 11%;
-    font-weight: bold;
-}
-
-.tour-city {
-    width: 24%;
-}
-
-.tour-arena {
-    width: 42%;
-}
-
-.tour-btn {
-    max-width: 19%;
-}
-
 .shop-item {
     margin: 30px;
 }
@@ -213,7 +223,7 @@ html, body {
     text-align: center;
     font-weight: bold;
     font-size: 1.5em;
-    color: #333;
+    color: #000000;
     margin-bottom: 15px;
 }
 
@@ -229,7 +239,7 @@ html, body {
 
 .shop-item-price {
     flex-grow: 1;
-    color: #333;
+    color: #000000;
 }
 
 .shop-items {
@@ -241,7 +251,7 @@ html, body {
 .cart-header {
     font-weight: bold;
     font-size: 1.25em;
-    color: #333;
+    color: #000000;
 }
 
 .cart-column {
@@ -264,7 +274,7 @@ html, body {
 .cart-price {
     width: 20%;
     font-size: 1.2em;
-    color: #333;
+    color: #000000;
 }
 
 .cart-quantity {
@@ -272,7 +282,7 @@ html, body {
 }
 
 .cart-item-title {
-    color: #333;
+    color: #000000;
     margin-left: .5em;
     font-size: 1.2em;
 }
@@ -302,7 +312,7 @@ html, body {
     border-radius: 5px;
     border: 1px solid #56CCF2;
     background-color: #eee;
-    color: #333;
+    color: black;
     padding: 0;
     text-align: center;
     font-size: 1.2em;
@@ -326,12 +336,12 @@ html, body {
 .cart-total-title {
     font-weight: bold;
     font-size: 1.5em;
-    color: black;
+    color: #ffffff;
     margin-right: 20px;
 }
 
 .cart-total-price {
-    color: #333;
+    color: #ffffff;
     font-size: 1.1em;
 }
 
@@ -339,4 +349,25 @@ html, body {
     display: block;
     margin: 40px auto 80px auto;
     font-size: 1.75em;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+.column1 {
+  float: center;
+  width: 75%;
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
 }

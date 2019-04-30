@@ -39,8 +39,8 @@ header::after{
   margin-bottom: 3px;
   border-radius: 20%;
   background-color: white;
-  max-height: 60px;
-  max-width: 60px;
+  max-height: 50px;
+  max-width: 50px;
 }
 
 .AppName {
@@ -114,12 +114,12 @@ nav a:hover::before {
 
 
 .container {
-    max-width: 1500px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5em;
     background-color: #CCC;
     border-radius: 15px;
-    height: 400px;
+    height: 710px;
 
 }
 
@@ -133,7 +133,7 @@ nav a:hover::before {
 }
 
 .image {
-    float: left;
+    float: right;
     height: 200px;
     width: 200px;
     background-color: white;

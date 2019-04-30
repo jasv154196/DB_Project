@@ -18,7 +18,7 @@
                   <ul>
                     <li><a href="../index.html">HOME</a></li>
                     <li><a href="Charts.html"> CHART</a></li>
-                    <li><a href="CustomerBill.html">FACTS</a></li>
+                    <li><a href="Facts.html">FACTS</a></li>
                     <li><a href="Attacks.html">COUNTRY MAP</a></li>
                     <li><a href="ExactLocation.html">ATTACKS MAP</a></li>
                   </ul>
@@ -27,50 +27,64 @@
           </header>
         </header>
 
-        <section class="container-chartone content-section-chartone">
-            <h2 class="section-header">More Information</h2>
-            <canvas id="myChart" width="20" height="20"></canvas>
-            <div class="chart-container">
-            <script>
-            var ctx = document.getElementById('myChart').getContext('2d');
-            var myChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['US', 'Canada', 'Russia', 'Australia', 'Mexico', 'China'],
-                    datasets: [{
-                        label: '# of Votes',
-                        data: [2, 4, 3, 5, 2, 3],
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                beginAtZero: true
-                            }
-                        }]
-                    }
-                }
-            });
-            </script>
-          </div>
+        <section class="container content-section">
+
+        <div class="map-container" id="interestingFacts">
+          <div id="funfacts-page"><section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+    <div class="mdl-card mdl-cell mdl-cell--6-col">
+        <div class="mdl-card__supporting-text">
+            <h4>Most popular type of attacks</h4>
+            <img src="Images/MostPopularType.png" width="900" height="150">
+            <p> </p>
+            <img src="Images/MostPopularTypeAttacks.png">
+        </div>
+    </div>
+</section>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+    <div class="mdl-card mdl-cell mdl-cell--12-col">
+        <div class="mdl-card__supporting-text">
+            <h4>Most Lethal Type of Attacks</h4>
+            <img src="Images/Fatal.png" width="900" height="150">
+            <p> </p>
+            <img src="Images/Lethal.png">
+
+        </div>
+    </div>
+</section>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+    <div class="mdl-card mdl-cell mdl-cell--12-col">
+        <div class="mdl-card__supporting-text">
+            <h4>Countries with most terrorist attacks</h4>
+            <img src="Images/Top10Countries.png">
+            <p> </p>
+            <img src="Images/Top10CountriesResult.png">
+        </div>
+    </div>
+</section>
+        <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+                <div class="mdl-card__supporting-text">
+                    <h4>Top 10 Terrorist Groups</h4>
+                    <img src="Images/Top10TerroristGroups.png">
+                    <p> </p>
+                    <img src="Images/Top10TerroristGroupsResult.png">
+                </div>
+            </div>
         </section>
+
+        <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+                <div class="mdl-card__supporting-text">
+                    <h4>Total number of people who died in terrorist attacks (1970-2017)</h4>
+                    <img src="Images/Deads.png" width="450" height="125">
+                </div>
+            </div>
+        </section>
+
+
+          </div>
+        </div>
+
+    </section>
     </body>
 </html>
