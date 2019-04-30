@@ -133,6 +133,29 @@ nav a:hover::before {
     margin-bottom: 40px;
 }
 
+.container-chartone {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 1.5em;
+    background-color: white;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.content-section-chartone {
+    margin: 1em;
+    height: 600px;
+    width: 600px
+}
+
+.chart-container {
+    display: block;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    display: inline-block;
+    margin-bottom: 40px;
+}
+
 .section-header {
     font-family: "Work Sans", sans-serif;
     font-weight: normal;
