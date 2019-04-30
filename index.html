@@ -1,38 +1,44 @@
+<!DOCTYPE html>
 <html>
-<head>
-<title>Login Form Design</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-	<body>
+    <head>
+        <!-- Font Awesome Icons -->
+        <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
-		<div class="login-page">
-			<div id="login_div" class="form">
-				<h2>Final Project</h2>
-				<h5>Statistics on Terrorist attacks</h5>
-				<input type="text" placeholder="Email Address" id="email_field" />
-				<input type="password" placeholder="Password" id="password_field"/>
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
 
-				<a href="pages/HomeScreen.html"><button onclick="login()">Log in</button></a>
-				<p class="message">Not Registered? <a href="#">Register</a></p>
-			</div>
-		</div>
+        <!-- Plugin CSS -->
+        <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
 
-		<script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
-		<script>
-		  // Initialize Firebase
-		  var config = {
-		    apiKey: "AIzaSyAq2wKCMpNvUH4QqCl0xeyaHVl_Mfkvz4I",
-		    authDomain: "ez-serve-62f4d.firebaseapp.com",
-		    databaseURL: "https://ez-serve-62f4d.firebaseio.com",
-		    projectId: "ez-serve-62f4d",
-		    storageBucket: "ez-serve-62f4d.appspot.com",
-		    messagingSenderId: "182446013228"
-		  };
-		  firebase.initializeApp(config);
-		</script>
+        <title>Terrorism | Home</title>
+        <meta name="description" content="This is the description">
+        <link rel="stylesheet" type="text/css" href="pages/HomeScreenStyle.css">
+    </head>
+    <body>
+        <header>
+            <div class="bar">
+              <img src="pages/Images/Logo.png" alt="logo" class="logo">
+              <p class="AppName">CS 4354 | Course Project</p>
+              <nav class="nav main-nav">
+                  <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="pages/CustomerBill.html">STATISTICS</a></li>
+                    <li><a href="pages/ExactLocation.html">ExactLocationMap</a></li>
+                    <li><a href="pages/CustomerBill.html">INTERESTING FACTS</a></li>
 
-		<script src="index.js"></script>
+                  </ul>
+              </nav>
+            </div>
+        </header>
 
-	</body>
+        <section class="content-section container">
+            <h2 class="section-header">Overview</h2>
+            <img class="image" src="pages/Images/Logo.png">
+            <p>For this project we decided to....blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah </p>
+            <p>These statistics reflect..blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah </p>
+        </section>
+
+    </body>
 </html>

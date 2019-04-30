@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Terrorism | Map</title>
+        <meta name="description" content="This is the description">
+        <link rel="stylesheet" href="CustomerBill.css" />
+        <script src="CustomerBill.js" async></script>
+
+
+        <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyDvPl-Fj7Pf7iQYEO7yzQtO7HFPyVG9YYw",
+            authDomain: "ez-serve-81804.firebaseapp.com",
+            databaseURL: "https://ez-serve-81804.firebaseio.com",
+            projectId: "ez-serve-81804",
+            storageBucket: "ez-serve-81804.appspot.com",
+            messagingSenderId: "554660451499"
+          };
+          firebase.initializeApp(config);
+        </script>
+
+    </head>
+    <body>
+        <header class="main-header">
+          <header>
+            <div class="bar">
+              <img src="Images/Logo.png" alt="logo" class="logo">
+              <p class="AppName">CS 4354 | Course Project</p>
+              <nav class="nav main-nav">
+                  <ul>
+                    <li><a href="HomeScreen.html">HOME</a></li>
+                    <li><a href="CustomerBill.html">STATISTICS</a></li>
+                    <li><a href="CustomerBill.html">INTERESTING FACTS</a></li>
+                  </ul>
+              </nav>
+            </div>
+          </header>
+        </header>
+
+        <section class="container content-section">
+            <iframe src="https://www.google.com/maps/d/embed?mid=1ClJ5zLKQcqjGaOFlrXuXic2DvZ10UPrR" width="1400" height="650"></iframe>
+        </section>
+    </body>
+</html>
