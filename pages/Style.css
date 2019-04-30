@@ -350,3 +350,24 @@ nav a:hover::before {
     margin: 40px auto 80px auto;
     font-size: 1.75em;
 }
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+.column1 {
+  float: center;
+  width: 75%;
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
